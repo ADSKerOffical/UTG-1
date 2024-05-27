@@ -1,0 +1,99 @@
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/lolpoppyus/Roblox-Lua/master/Pop%20UI%20Lib", true))()
+
+local ui = library:Tab("UTG | Sukuna Battlegrounds")
+
+ui:Button("Shrine", function()
+    local ohString1 = "Shrine"
+
+game:GetService("ReplicatedStorage").Sukuna2.BeowulfRemote:FireServer(ohString1)
+end)
+
+ui:Button("Domain Summon", function()
+    local ohString1 = "DomainSummon"
+local ohCFrame2 = CFrame.new(-173.471024, 29.1463394, 26.0836563, -0.264251322, 7.09966415e-08, 0.964453876, 5.60420723e-08, 1, -5.82583084e-08, -0.964453876, 3.86551591e-08, -0.264251322)
+
+game:GetService("ReplicatedStorage").Sukuna2.BeowulfRemote:FireServer(ohString1, ohCFrame2)
+end)
+
+ui:Button("Black Explode", function()
+    local ohString1 = "DomainStart"
+
+game:GetService("ReplicatedStorage").Sukuna2.BeowulfRemote:FireServer(ohString1)
+end)
+
+ui:Button("Hehehe", function()
+    local ohString1 = "DomainSFX"
+
+game:GetService("ReplicatedStorage").Sukuna2.BeowulfRemote:FireServer(ohString1)
+end)
+
+ui:Button("Scratches", function()
+    for i = 1, 100 do
+wait(0.05)
+local ohString1 = "Groundslash"
+
+game:GetService("ReplicatedStorage").Sukuna2.BeowulfRemote:FireServer(ohString1)
+end
+end)
+
+ui:Button("Laugh at them", function()
+    local ohString1 = "Laughing"
+
+game:GetService("ReplicatedStorage").Sukuna2.BeowulfRemote:FireServer(ohString1)
+end)
+
+ui:Button("Colored Map", function()
+    local ohString1 = "DomainVFX"
+
+game:GetService("ReplicatedStorage").Sukuna2.BeowulfRemote:FireServer(ohString1)
+end)
+
+ui:Button("Hell on Earth", function()
+    local ohString1 = "HellOnEarth3"
+
+game:GetService("ReplicatedStorage").Sukuna2.BeowulfRemote:FireServer(ohString1)
+end)
+
+ui:Dropdown("Mahoraga Apocalypse", {"Input Megumi","Mahoraga Apocalypse"}, function(arg)
+ if arg == "Input Megumi" then
+ local ohString1 = "Character"
+local ohString2 = "Megumi"
+local ohString3 = "Select"
+
+game:GetService("ReplicatedStorage").Attribute:FireServer(ohString1, ohString2, ohString3)
+ end
+  if arg == "Mahoraga Apocalypse" then
+  local Player = game.Players.LocalPlayer
+
+local hasTool = false
+for _, tool in ipairs(Player.Backpack:GetChildren()) do
+    if tool.Name == "SUMMON MAHORAGA!" then
+        hasTool = true
+        break
+    end
+end
+
+if not hasTool then
+  local players = game:GetService("Players"):GetPlayers()
+
+for _, player in ipairs(players) do
+    if player.Character and player.Character ~= game.Players.LocalPlayer.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+local ohVector31 = player.Character.HumanoidRootPart.Position
+
+game:GetService("Players").LocalPlayer.Backpack.COOLDOWN.Use.RemoteEvent:FireServer(ohVector31)
+  end
+end
+end
+
+if hasTool then
+local players = game:GetService("Players"):GetPlayers()
+
+for _, player in ipairs(players) do
+    if player.Character and player.Character ~= game.Players.LocalPlayer.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+        local ohVector31 = player.Character.HumanoidRootPart.Position
+ game:GetService("Players").LocalPlayer.Backpack["SUMMON MAHORAGA!"].Use.RemoteEvent:FireServer(ohVector31)
+    end
+end
+end
+  end
+end)
